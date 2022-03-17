@@ -8,6 +8,6 @@
 # Default: true
 use-default-tp-permission: true
 
-# Whether /offlineplayertp command show also teleportation
+# Whether /offlineplayertp command show allow teleportation
 # between offline AND online players
 allow-online-player-tp: true
