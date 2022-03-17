@@ -1,0 +1,13 @@
+# Whether to use pocketmine's /teleport command's permission
+# for /offlineplayertp command.
+#
+# If set to false, the permission "offlineplayertp.command"
+# will be used instead which all /op players have access to
+# by default.
+#
+# Default: true
+use-default-tp-permission: true
+
+# Whether /offlineplayertp command show also teleportation
+# between offline AND online players
+allow-online-player-tp: true

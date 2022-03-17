@@ -1,0 +1,17 @@
+name: OfflinePlayerTP
+main: muqsit\offlineplayertp\Loader
+api: 4.0.0
+version: 0.0.1
+commands:
+  offlineplayertp:
+    aliases: ["otp"]
+    permission: offlineplayertp.command
+    description: Teleports the given (offline) player or yourself to another (offline) player or coordinates
+    usage: |
+
+      /otp <player> - Teleport to offline <player>
+      /otp <sourcePlayer> <destinationPlayer> - Teleport offline <sourcePlayer> to <destinationPlayer>
+      /otp <player> <x> <y> <z> [world] [yaw] [pitch] - Teleport offline <player> to coordinates
+permissions:
+  offlineplayertp.command:
+    default: op
