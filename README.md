@@ -1,4 +1,6 @@
 # OfflinePlayerTP
+[![](https://poggit.pmmp.io/shield.state/OfflinePlayerTP)](https://poggit.pmmp.io/p/OfflinePlayerTP)
+
 A PocketMine-MP plugin that lets you teleport among offline players.
 
 ## Commands
