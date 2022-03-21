@@ -22,7 +22,6 @@ use function assert;
 use function count;
 use function round;
 use function substr;
-use function var_dump;
 
 final class Loader extends PluginBase{
 
