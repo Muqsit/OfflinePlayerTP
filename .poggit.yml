@@ -5,4 +5,5 @@ branches:
 projects:
   OfflinePlayerTP:
     path: ""
+    icon: icon.png
 ...
