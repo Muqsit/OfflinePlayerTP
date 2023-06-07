@@ -33,11 +33,12 @@ final class Loader extends PluginBase{
 			$command = $this->getCommand("offlineplayertp") ?? throw new RuntimeException("Could not retrieve command: offlineplayertp");
 
 			$manager = PermissionManager::getInstance();
-			$permission_string = $command->getPermission() ?? throw new RuntimeException("Could not retrieve default permission from \"{$command->getName()}\" command");
-			$permission = $manager->getPermission($permission_string) ?? throw new RuntimeException("Permission \"{$permission_string}\" does not exist");
-			$manager->removePermission($permission);
-
-			$command->setPermission(DefaultPermissionNames::COMMAND_TELEPORT);
+			$permission_strings = $command->getPermissions();
+			foreach($permission_strings as $permission_string){
+				$permission = $manager->getPermission($permission_string) ?? throw new RuntimeException("Permission \"{$permission_string}\" does not exist");
+				$manager->removePermission($permission);
+			}
+			$command->setPermissions([DefaultPermissionNames::COMMAND_TELEPORT_OTHER, DefaultPermissionNames::COMMAND_TELEPORT_SELF]);
 		}
 	}
 
