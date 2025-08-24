@@ -148,10 +148,15 @@ final class Loader extends PluginBase{
 				$pos = $dst_player_online->getLocation();
 				$dst_pos = [$pos->x, $pos->y, $pos->z, $pos->getWorld()->getFolderName(), $pos->yaw, $pos->pitch];
 			}else{
+				$pos = null;
 				try{
 					OfflinePlayerTp::getLocation($dst_player, $pos, $world, $yaw, $pitch);
 				}catch(InvalidArgumentException){
 					$sender->sendMessage(TextFormat::RED . "Player \"{$dst_player}\" has not joined the server.");
+					return true;
+				}
+				if($pos === null){
+					$sender->sendMessage(TextFormat::RED . "Player \"{$dst_player}\" does not have a valid location set.");
 					return true;
 				}
 				$dst_pos = [$pos->x, $pos->y, $pos->z, $world, $yaw, $pitch];
